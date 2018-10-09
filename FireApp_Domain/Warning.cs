@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FireApp.Domain {
-    public class FireEvent {
-
+namespace FireApp.Domain
+{
+    public class Warning
+    {
         public int Id { get; set; }
-        public DateTime At { get; set; }
-
-        public string By { get; set; }
 
         public string Name { get; set; }
+
+        public string Description { get; set; }
+
+        // Link to the image.
+        public string Symbol { get; set; }
     }
 }

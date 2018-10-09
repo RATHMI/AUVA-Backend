@@ -11,7 +11,7 @@ namespace FireApp.Service {
         public static string ServicePath { get; set; }
 
 
-        public static string FireEventDBPath { get; set; }
+        public static string AuvaDBPath { get; set; }
 
 
         static AppSettings() {
@@ -19,7 +19,7 @@ namespace FireApp.Service {
             ServicePath = new Uri(Path.GetDirectoryName(fullSystemPath)).LocalPath;
             QualityMode = fullSystemPath.ToLower().Contains("_q");
 
-            FireEventDBPath = ConfigurationManager.AppSettings["fireEventDBPath"].ToFullPath();
+            AuvaDBPath = ConfigurationManager.AppSettings["auvaDBPath"].ToFullPath();
         }
 
         public static string ToFullPath(this string path) {

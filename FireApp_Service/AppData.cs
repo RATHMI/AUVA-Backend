@@ -11,17 +11,16 @@ using System.Xml.Serialization;
 namespace FireApp.Service {
     public static class AppData {
         static AppData() {
-            BsonMapper.Global.Entity<FireEvent>()
+            BsonMapper.Global.Entity<User>()
                 .Id(x => x.Id, true);
-
         }
 
-        #region FireEventDB
-        public static LiteDatabase FireEventDB() {
-            return new LiteDatabase(AppSettings.FireEventDBPath);
+        #region UserDB
+        public static LiteDatabase UserDB() {
+            return new LiteDatabase(AppSettings.AuvaDBPath);
         }
-        public static LiteCollection<FireEvent> FrieEventTable(this LiteDatabase db) {
-            return db.GetCollection<FireEvent>("events");
+        public static LiteCollection<User> UserTable(this LiteDatabase db) {
+            return db.GetCollection<User>("user");
         }
         #endregion
     }
