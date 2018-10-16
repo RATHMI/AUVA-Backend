@@ -12,57 +12,12 @@ namespace FireApp.Service.DatabaseOperations
     public static class DbQueries
     {
         /// <summary>
-        /// Queries all FireEvents from the database.
+        /// Queries a User from the database.
         /// </summary>
-        /// <returns>Returns all FireEvents from database.</returns>
-        public static IEnumerable<FireEvent> QueryFireEvents()
+        /// <returns>Returns a User with a matching id.</returns>
+        public static User QueryUser(string id)
         {
-            return LocalDatabase.GetAllFireEvents();
-        }
-
-        /// <summary>
-        /// Queries all active FireEvents from the database.
-        /// </summary>
-        /// <returns>Returns all active FireEvents from the database.</returns>
-        public static IEnumerable<FireEvent> QueryActiveFireEvents()
-        {
-            return LocalDatabase.GetActiveFireEvents();
-        }
-
-        /// <summary>
-        /// Queries all FireAlarmSystems from the database.
-        /// </summary>
-        /// <returns>Returns a list with all FireAlarmSystems from database.</returns>
-        public static IEnumerable<FireAlarmSystem> QueryFireAlarmSystems()
-        {
-            return LocalDatabase.GetAllFireAlarmSystems();
-        }
-
-        /// <summary>
-        /// Queries all FireBrigades from the database.
-        /// </summary>
-        /// <returns>Returns a list with all FireBrigades from database.</returns>
-        public static IEnumerable<FireBrigade> QueryFireBrigades()
-        {
-            return LocalDatabase.GetAllFireBrigades();
-        }
-
-        /// <summary>
-        /// Queries all ServiceGroups from the database.
-        /// </summary>
-        /// <returns>Returns a list with all ServiceGroups from database.</returns>
-        public static IEnumerable<ServiceGroup> QueryServiceGroups()
-        {
-            return LocalDatabase.GetAllServiceGroups();
-        }
-
-        /// <summary>
-        /// Queries all Users from the database.
-        /// </summary>
-        /// <returns>Returns a list with all Users from database.</returns>
-        public static IEnumerable<User> QueryUsers()
-        {
-            return LocalDatabase.GetAllUsers();
+            return LiteDB.LiteDbQueries.QueryUser(id);
         }
     }
 }

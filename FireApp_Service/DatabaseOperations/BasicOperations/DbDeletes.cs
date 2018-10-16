@@ -12,27 +12,21 @@ namespace FireApp.Service.DatabaseOperations
     public static class DbDeletes
     {
         /// <summary>
-        /// Deletes an active FireEvent from the database.
+        /// Deletes a User from the database.
         /// </summary>
-        /// <param name="fe">The FireEvent you want to delete.</param>
-        /// <returns>Returns true if the FireEvent was deleted.</returns>
-        public static bool DeleteUser(FireEvent fe)
+        /// <param name="id">The id of the User you want to delete.</param>
+        /// <returns>Returns true if the User was deleted.</returns>
+        public static bool DeleteUser(string id)
         {
             try
             {
-                // Delete active FireEvent from local database.
-                LocalDatabase.DeleteActiveFireEvent(fe);
-
                 // Delete active FireEvent from remote database.
-                return DatabaseOperations.LiteDB.LiteDbDeletes.DeleteActiveFireEvent(fe);
+                return DatabaseOperations.LiteDB.LiteDbDeletes.DeleteUser(id);
             }
             catch (Exception)
             {
                 return false;
             }        
         }
-
-        
-
     }
 }

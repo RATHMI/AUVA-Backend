@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 namespace FireApp.Domain {
     public class User {
 
-        public int Id { get; set; }        
-
-        public string Username { get; set; }
+        // Username.
+        public string Id { get; set; }        
 
         public string Firstname { get; set; }
 

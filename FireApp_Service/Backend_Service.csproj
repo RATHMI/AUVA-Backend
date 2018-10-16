@@ -109,7 +109,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DatabaseOperations\Info.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -119,17 +118,12 @@
     <Compile Include="AppStartup.cs" />
     <Compile Include="Authentication\Token.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="DatabaseOperations\ActiveFireEvents.cs" />
     <Compile Include="DatabaseOperations\BasicOperations\DbDeletes.cs" />
     <Compile Include="DatabaseOperations\BasicOperations\DbQueries.cs" />
     <Compile Include="DatabaseOperations\BasicOperations\DbUpserts.cs" />
-    <Compile Include="DatabaseOperations\FireAlarmSystems.cs" />
-    <Compile Include="DatabaseOperations\FireBrigades.cs" />
-    <Compile Include="DatabaseOperations\FireEvents.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbDeletes.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbQueries.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbUpserts.cs" />
-    <Compile Include="DatabaseOperations\ServiceGroups.cs" />
     <Compile Include="DatabaseOperations\Users.cs" />
     <Compile Include="Encryption\Encrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
