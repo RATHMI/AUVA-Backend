@@ -25,14 +25,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="FireApp.Domain.User">
-    <Position X="4.5" Y="8" Width="2.5" />
+    <Position X="4.5" Y="9.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAACAEAAACAAAAAIAQAAAAAAAAAAAAACAgAAgAABAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FireApp.Domain.Usergroup">
-    <Position X="2.25" Y="8" Width="1.75" />
+    <Position X="2.25" Y="9.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAgCAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Usergroup.cs</FileName>
@@ -45,8 +45,15 @@
       <FileName>Warning.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="FireApp.Domain.SecurityClothes">
+    <Position X="2.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>SecurityClothes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="FireApp.Domain.Usertype">
-    <Position X="4.5" Y="10.75" Width="1.5" />
+    <Position X="4.5" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAEAAAAAAAAACAABAAA=</HashCode>
       <FileName>Usergroup.cs</FileName>

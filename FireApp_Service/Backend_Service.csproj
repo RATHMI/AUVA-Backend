@@ -58,6 +58,10 @@
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MlkPwgen, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MlkPwgen.0.3.0\lib\net45\MlkPwgen.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -105,6 +109,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DatabaseOperations\Info.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -112,7 +117,21 @@
     <Compile Include="AppResources.cs" />
     <Compile Include="AppSettings.cs" />
     <Compile Include="AppStartup.cs" />
+    <Compile Include="Authentication\Token.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DatabaseOperations\ActiveFireEvents.cs" />
+    <Compile Include="DatabaseOperations\BasicOperations\DbDeletes.cs" />
+    <Compile Include="DatabaseOperations\BasicOperations\DbQueries.cs" />
+    <Compile Include="DatabaseOperations\BasicOperations\DbUpserts.cs" />
+    <Compile Include="DatabaseOperations\FireAlarmSystems.cs" />
+    <Compile Include="DatabaseOperations\FireBrigades.cs" />
+    <Compile Include="DatabaseOperations\FireEvents.cs" />
+    <Compile Include="DatabaseOperations\LiteDB\DbDeletes.cs" />
+    <Compile Include="DatabaseOperations\LiteDB\DbQueries.cs" />
+    <Compile Include="DatabaseOperations\LiteDB\DbUpserts.cs" />
+    <Compile Include="DatabaseOperations\ServiceGroups.cs" />
+    <Compile Include="DatabaseOperations\Users.cs" />
+    <Compile Include="Encryption\Encrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

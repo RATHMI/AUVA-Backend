@@ -8,9 +8,8 @@ namespace FireApp.Domain
 {
     public class Room
     {
-        public int Id { get; set; }
-
-        public string RoomNumber { get; set; }
+        // RoomNumber
+        public string Id { get; set; }
 
         public string Description { get; set; }
 

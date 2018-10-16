@@ -6,19 +6,13 @@ using System.Threading.Tasks;
 
 namespace FireApp.Domain
 {
-    public class Usergroup
+    public class SecurityClothes
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public Usertype Usertype { get; set; }
-    }
 
-    public enum Usertype
-    {
-        admin=1,
-        teacher=2,
-        student=3,
-        guest=0
+        public string Name { get; set; }
+
+        // Link to the image on the server.
+        public string Image { get; set; }
     }
 }
