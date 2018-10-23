@@ -7,6 +7,7 @@ using System.Net.Http.Formatting;
 using Newtonsoft.Json.Serialization;
 using System.Web;
 using Microsoft.Owin.Cors;
+using FireApp.Domain;
 
 [assembly: OwinStartup(typeof(FireApp.Service.AppStartup))]
 
@@ -26,6 +27,12 @@ namespace FireApp.Service {
             config.MapHttpAttributeRoutes();
 
             app.UseWebApi(config);
+
+            User admin = new User();
+            admin.Id = "admin";
+            admin.Password = "admin";
+
+            DatabaseOperations.Users.Upsert(admin);
         }
     }
 }

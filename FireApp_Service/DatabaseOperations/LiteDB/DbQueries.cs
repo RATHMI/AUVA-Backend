@@ -12,9 +12,22 @@ namespace FireApp.Service.DatabaseOperations.LiteDB
     public static class LiteDbQueries
     {      
         /// <summary>
-        /// Queries all Users from the LiteDB.
+        /// Queries the User from the LiteDB.
         /// </summary>
-        /// <returns>Returns a list with all Users from database.</returns>
+        /// <returns>Returns the User from the database.</returns>
+        public static User QueryUser(string id)
+        {
+            using (var db = AppData.UserDB())
+            {
+                var table = db.UserTable();
+                return table.FindById(id);
+            }
+        }
+
+        /// <summary>
+        /// Queries the Users from the LiteDB.
+        /// </summary>
+        /// <returns>Returns all Users from the database.</returns>
         public static IEnumerable<User> QueryUsers()
         {
             using (var db = AppData.UserDB())
@@ -25,14 +38,14 @@ namespace FireApp.Service.DatabaseOperations.LiteDB
         }
 
         /// <summary>
-        /// Queries the User from the LiteDB.
+        /// Queries the Room from the LiteDB.
         /// </summary>
-        /// <returns>Returns the User from the database.</returns>
-        public static User QueryUser(string id)
+        /// <returns>Returns the Room from the database.</returns>
+        public static Room QueryRoom(string id)
         {
             using (var db = AppData.UserDB())
             {
-                var table = db.UserTable();
+                var table = db.RoomTable();
                 return table.FindById(id);
             }
         }

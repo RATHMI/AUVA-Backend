@@ -24,7 +24,7 @@ namespace FireApp.Service.DatabaseOperations
                 user.Password = Encryption.Encrypt.EncryptString(user.Password);
 
                 // Save the User in the database.
-                return DatabaseOperations.DbUpserts.UpsertUser(user);
+                return LiteDB.LiteDbUpserts.UpsertUser(user);
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace FireApp.Service.DatabaseOperations
         /// <returns>Returns true if the User was deleted.</returns>
         public static bool Delete(string userName)
         {
-            return DatabaseOperations.DbDeletes.DeleteUser(userName);           
+            return LiteDB.LiteDbDeletes.DeleteUser(userName);           
         }
 
         /// <summary>
@@ -50,8 +50,12 @@ namespace FireApp.Service.DatabaseOperations
         /// <returns>Returns a User with a matching Username.</returns>
         public static User GetById(string userName)
         {
-            return DbQueries.QueryUser(userName);
+            return LiteDB.LiteDbQueries.QueryUser(userName);
         }
     
+        public static IEnumerable<User> GetAll()
+        {
+            return LiteDB.LiteDbQueries.QueryUsers();
+        }
     }
 }

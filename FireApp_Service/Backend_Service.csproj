@@ -118,9 +118,6 @@
     <Compile Include="AppStartup.cs" />
     <Compile Include="Authentication\Token.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="DatabaseOperations\BasicOperations\DbDeletes.cs" />
-    <Compile Include="DatabaseOperations\BasicOperations\DbQueries.cs" />
-    <Compile Include="DatabaseOperations\BasicOperations\DbUpserts.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbDeletes.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbQueries.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbUpserts.cs" />

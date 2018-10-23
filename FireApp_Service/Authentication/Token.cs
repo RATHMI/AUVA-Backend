@@ -42,7 +42,7 @@ namespace FireApp.Service.Authentication
                         user.Token = GenerateToken();
 
                         // Save the changes in the database
-                        DatabaseOperations.Users.Upsert(user, user);
+                        DatabaseOperations.Users.Upsert(user);
                         return user.Token;
                     }
                 }
