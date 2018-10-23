@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using FireApp.Domain;
+using AUVA.Domain;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using MlkPwgen;
 
-namespace FireApp.Service.Authentication
+namespace AUVA.Service.Authentication
 {
     /// <summary>
     /// This class is for authentication via tokens.

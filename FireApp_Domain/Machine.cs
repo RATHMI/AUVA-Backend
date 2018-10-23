@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FireApp.Domain
+namespace AUVA.Domain
 {
     public class Machine
     {

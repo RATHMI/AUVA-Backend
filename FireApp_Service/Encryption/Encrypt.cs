@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace FireApp.Service.Encryption
+namespace AUVA.Service.Encryption
 {
 
     //Don't forget the using System.Security.Cryptography; statement when you add this class

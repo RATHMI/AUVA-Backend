@@ -1,4 +1,4 @@
-﻿using FireApp.Domain;
+﻿using AUVA.Domain;
 using LiteDB;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace FireApp.Service.Controllers {
+namespace AUVA.Service.Controllers {
     [RoutePrefix("user")]
     public class UserController : ApiController
     {
