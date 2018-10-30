@@ -1,8 +1,6 @@
-﻿using FireApp.Domain;
+﻿using AUVA.Domain;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace FireApp.Service.DatabaseOperations
 {
@@ -13,7 +11,7 @@ namespace FireApp.Service.DatabaseOperations
             try
             {
                 // Save the machine in the database.
-                return LiteDB.LiteDbUpserts.UpsertMachine(machine);
+                //return LiteDB.LiteDbUpserts.UpsertMachine(machine);
             }
             catch (Exception ex)
             {
