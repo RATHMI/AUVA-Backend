@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 
-namespace FireApp.Service {
+namespace AUVA.Service {
     public class AppResources {
         //public static SiteNetworkApps SiteNetworkApps { get { return SiteNetworkAppStore.Instance.Apps; } }
         //public static SiteNetworkPersons SiteNetworkPersons { get { return SiteNetworkPersonStore.Instance.Users; } set { SiteNetworkPersonStore.Instance.Upload(value); } }

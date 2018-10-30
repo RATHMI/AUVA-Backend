@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-namespace FireApp.Service {
+namespace AUVA.Service {
     public static class AppSettings {
         public static bool QualityMode { get; set; }
         public static string ServicePath { get; set; }

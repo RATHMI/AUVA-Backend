@@ -7,11 +7,11 @@ using System.Net.Http.Formatting;
 using Newtonsoft.Json.Serialization;
 using System.Web;
 using Microsoft.Owin.Cors;
-using FireApp.Domain;
+using AUVA.Domain;
 
-[assembly: OwinStartup(typeof(FireApp.Service.AppStartup))]
+[assembly: OwinStartup(typeof(AUVA.Service.AppStartup))]
 
-namespace FireApp.Service {
+namespace AUVA.Service {
     public class AppStartup {
         public void Configuration(IAppBuilder app) {
             var config = new HttpConfiguration();

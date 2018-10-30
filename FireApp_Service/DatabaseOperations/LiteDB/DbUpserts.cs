@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using FireApp.Domain;
+using AUVA.Domain;
 
-namespace FireApp.Service.DatabaseOperations.LiteDB
+namespace AUVA.Service.DatabaseOperations.LiteDB
 {
     /// <summary>
     /// This class is for upserting objects into the LiteDB.

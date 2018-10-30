@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using FireApp.Domain;
+using AUVA.Domain;
 using MlkPwgen;
 using System.Text.RegularExpressions;
-using static FireApp.Domain.User;
+using static AUVA.Domain.User;
 
-namespace FireApp.Service.DatabaseOperations
+namespace AUVA.Service.DatabaseOperations
 {
     public static class Users
     {

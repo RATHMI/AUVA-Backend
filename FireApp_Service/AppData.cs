@@ -1,4 +1,4 @@
-﻿using FireApp.Domain;
+﻿using AUVA.Domain;
 using LiteDB;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Xml.Serialization;
 
-namespace FireApp.Service {
+namespace AUVA.Service {
     public static class AppData {
 
         static AppData() {
