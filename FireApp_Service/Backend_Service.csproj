@@ -117,10 +117,12 @@
     <Compile Include="AppSettings.cs" />
     <Compile Include="AppStartup.cs" />
     <Compile Include="Authentication\Token.cs" />
+    <Compile Include="Controllers\MachineController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbDeletes.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbQueries.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbUpserts.cs" />
+    <Compile Include="DatabaseOperations\Machines.cs" />
     <Compile Include="DatabaseOperations\Users.cs" />
     <Compile Include="Encryption\Encrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

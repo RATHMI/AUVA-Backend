@@ -37,7 +37,114 @@ namespace FireApp.Service.DatabaseOperations.LiteDB
             {
                 return false;
             }
-        }      
+        }  
+        
+        public static bool DeleteMachine(int machineId)
+        {
+            try
+            {        
+                using (var db = AppData.MachineDB())
+                {
+                    var table = db.MachineTable();
+                    if (table.Delete(x => x.Id == machineId) > 0)
+                   {
+                     return true;
+                   }
+                }
+                
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }   
+
+        public static bool DeleteMachineType(int machineTypeId)
+        {
+            try
+            {
+                using (var db = AppData.MachineTypeDB())
+                {
+                    var table = db.MachineTypeTable();
+                    if (table.Delete(x => x.Id == machineTypeId) > 0)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool DeleteRoom(string roomId)
+        {
+            try
+            {
+                if (roomId != null)
+                {
+                    using (var db = AppData.RoomDB())
+                    {
+                        var table = db.RoomTable();
+                        if (table.Delete(x => x.Id == roomId) > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool DeleteSecurityClothes(int scId)
+        {
+            try
+            {
+                using (var db = AppData.SecurityClothesDB())
+                {
+                    var table = db.SecurityClothesTable();
+                    if (table.Delete(x => x.Id == scId) > 0)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool DeleteWarning(int warningId)
+        {
+            try
+            {
+                using (var db = AppData.WarningDB())
+                {
+                    var table = db.WarningTable();
+                    if (table.Delete(x => x.Id == warningId) > 0)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
     }
 }
