@@ -1,4 +1,4 @@
-﻿using FireApp.Domain;
+﻿using AUVA.Domain;
 using LiteDB;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,6 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace FireApp.Service.Controllers {
-    [RoutePrefix("machine")]
     public class MachineController : ApiController
     {
         /// <summary>
@@ -19,7 +18,7 @@ namespace FireApp.Service.Controllers {
         /// </summary>
         /// <param name="u">The User you want to upsert.</param>
         /// <returns>Returns true if the User was inserted.</returns>
-        [HttpPost, Route("upload")]
+        [HttpPost, Route("machines")]
         public bool UpsertMachine([FromBody] Machine m)
         {
             try
@@ -30,7 +29,7 @@ namespace FireApp.Service.Controllers {
                 }
 
                 User user;
-                Authentication.Token.CheckAccess(Request.Headers, out user);
+                AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
                 if (user != null)
                 {
                     return DatabaseOperations.Machines.Upsert(m);
@@ -47,27 +46,20 @@ namespace FireApp.Service.Controllers {
 
         }
 
-       
-
         /// <summary>
         /// Checks if the token of the request is valid.
         /// </summary>
         /// <returns>Returns the machine if the token is valid.</returns>
-        [HttpGet, Route("getmachine")]
-        public Machine GetMachine(Machine m)
+        [HttpGet, Route("machines/{id}")]
+        public Machine GetMachine(int id)
         {
             try
             {
-                if (m==null)
-                {
-                    throw new ArgumentNullException();
-                }
-
                 User user;
-                Authentication.Token.CheckAccess(Request.Headers, out user);
+                AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
                 if (user != null)
                 {
-                    return DatabaseOperations.Machines.GetById(m.Id); 
+                    return DatabaseOperations.Machines.GetById(id); 
                 }
                 else
                 {
@@ -84,13 +76,13 @@ namespace FireApp.Service.Controllers {
         /// Returns all the machines from the database.
         /// </summary>
         /// <returns>every machine object from the LiteDB.</returns>
-        [HttpGet, Route("getmachines")]
+        [HttpGet, Route("machines")]
         public IEnumerable<Machine> GetMachines()
         {
             try
             {
                 User user;
-                Authentication.Token.CheckAccess(Request.Headers, out user);
+                AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
                 if (user != null)
                 {
                     return DatabaseOperations.Machines.GetAll();
@@ -112,13 +104,13 @@ namespace FireApp.Service.Controllers {
         /// </summary>
         /// <param name="machineId">Id of the Machine you want to delete.</param>
         /// <returns>Returns true if Machine was deleted.</returns>
-        [HttpGet, Route("delete/{machineId}")]
+        [HttpDelete, Route("machine/{machineId}")]
         public bool DeleteMachine(int machineId)
         {
             try
             {
                 User user;
-                Authentication.Token.CheckAccess(Request.Headers, out user);
+                AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
                 if (user != null)
                 {
                     return DatabaseOperations.Machines.Delete(machineId);

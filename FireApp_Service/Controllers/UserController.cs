@@ -9,7 +9,6 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace AUVA.Service.Controllers {
-    [RoutePrefix("user")]
     public class UserController : ApiController
     {
         /// <summary>
@@ -19,7 +18,7 @@ namespace AUVA.Service.Controllers {
         /// </summary>
         /// <param name="u">The User you want to upsert.</param>
         /// <returns>Returns true if the User was inserted.</returns>
-        [HttpPost, Route("upload")]
+        [HttpPost, Route("users")]
         public bool UpsertUser([FromBody] User u)
         {
             try
@@ -53,7 +52,7 @@ namespace AUVA.Service.Controllers {
         /// </summary>
         /// <param name="login">The login data of a User.</param>
         /// <returns>Returns the token if the login worked or null if not.</returns>
-        [HttpPost, Route("authenticate")]
+        [HttpPost, Route("users/authenticate")]
         public string Authenticate([FromBody]UserLogin login)
         {
             return Authentication.Token.RefreshToken(login.Username, login.Password);
@@ -63,12 +62,12 @@ namespace AUVA.Service.Controllers {
         /// Checks if the token of the request is valid.
         /// </summary>
         /// <returns>Returns the user if the token is valid.</returns>
-        [HttpGet, Route("getuser")]
-        public User[] GetUser()
+        [HttpGet, Route("users/self")]
+        public User GetUser()
         {
             User user;
             Authentication.Token.CheckAccess(Request.Headers, out user);
-            return new User[] { user };
+            return user;
         }
 
         /// <summary>
@@ -76,7 +75,7 @@ namespace AUVA.Service.Controllers {
         /// </summary>
         /// <param name="userName">Id of the User you want to delete.</param>
         /// <returns>Returns true if User was deleted.</returns>
-        [HttpGet, Route("delete/{username}")]
+        [HttpDelete, Route("users/{username}")]
         public bool DeleteUser(string userName)
         {
             try

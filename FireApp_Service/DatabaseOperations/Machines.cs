@@ -10,8 +10,7 @@ namespace FireApp.Service.DatabaseOperations
         {
             try
             {
-                // Save the machine in the database.
-                //return LiteDB.LiteDbUpserts.UpsertMachine(machine);
+                return AUVA.Service.DatabaseOperations.LiteDB.LiteDbUpserts.UpsertMachine(machine);
             }
             catch (Exception ex)
             {
@@ -27,7 +26,7 @@ namespace FireApp.Service.DatabaseOperations
         /// <returns>Returns true if the machine was deleted.</returns>
         public static bool Delete(int machineId)
         {
-            return LiteDB.LiteDbDeletes.DeleteMachine(machineId);
+            return AUVA.Service.DatabaseOperations.LiteDB.LiteDbDeletes.DeleteMachine(machineId);
         }
 
         /// <summary>
@@ -37,12 +36,12 @@ namespace FireApp.Service.DatabaseOperations
         /// <returns>Returns a machine with a matching machineId.</returns>
         public static Machine GetById(int machineId)
         {
-            return LiteDB.LiteDbQueries.QueryMachine(machineId);
+            return AUVA.Service.DatabaseOperations.LiteDB.LiteDbQueries.QueryMachine(machineId);
         }
 
         public static IEnumerable<Machine> GetAll()
         {
-            return LiteDB.LiteDbQueries.QueryMachines();
+            return AUVA.Service.DatabaseOperations.LiteDB.LiteDbQueries.QueryMachines();
         }
     }
 }

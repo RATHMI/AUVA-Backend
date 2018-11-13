@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using FireApp.Domain;
+using AUVA.Domain;
+using AUVA.Service;
 
-namespace FireApp.Service.DatabaseOperations.LiteDB
+namespace AUVA.Service.DatabaseOperations.LiteDB
 {
     /// <summary>
     /// This class is for querying objects from the LiteDB.
