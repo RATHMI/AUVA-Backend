@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace FireApp.Service.Controllers {
+namespace AUVA.Service.Controllers {
     public class MachineController : ApiController
     {
         /// <summary>
