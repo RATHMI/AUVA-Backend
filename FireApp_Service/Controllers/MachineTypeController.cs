@@ -9,8 +9,8 @@ using System.Net.Http;
 using System.Web.Http;
 
 namespace AUVA.Service.Controllers {
-    [RoutePrefix("machines")]
-    public class MachineController : ApiController
+    [RoutePrefix("machinetypes")]
+    public class MachineTypeController : ApiController
     {
         /// <summary>
         /// Inserts a Machine into the database or updates it if it already exists.
@@ -20,11 +20,11 @@ namespace AUVA.Service.Controllers {
         /// <param name="u">The User you want to upsert.</param>
         /// <returns>Returns true if the User was inserted.</returns>
         [HttpPost]
-        public bool UpsertMachine([FromBody] Machine m)
+        public bool UpsertMachine([FromBody] MachineType mt)
         {
             try
             {
-                if (m == null)
+                if (mt == null)
                 {
                     throw new ArgumentNullException();
                 }
@@ -33,7 +33,7 @@ namespace AUVA.Service.Controllers {
                 AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
                 if (user != null)
                 {
-                    return DatabaseOperations.Machines.Upsert(m);
+                    return DatabaseOperations.MachineTypes.Upsert(mt);
                 }
                 else
                 {
@@ -52,7 +52,7 @@ namespace AUVA.Service.Controllers {
         /// </summary>
         /// <returns>Returns the machine if the token is valid.</returns>
         [HttpGet, Route("{id}")]
-        public Machine GetMachine(int id)
+        public MachineType GetMachineType(int id)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace AUVA.Service.Controllers {
                 AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
                 if (user != null)
                 {
-                    return DatabaseOperations.Machines.GetById(id); 
+                    return DatabaseOperations.MachineTypes.GetById(id); 
                 }
                 else
                 {
@@ -78,7 +78,7 @@ namespace AUVA.Service.Controllers {
         /// </summary>
         /// <returns>every machine object from the LiteDB.</returns>
         [HttpGet]
-        public IEnumerable<Machine> GetMachines()
+        public IEnumerable<MachineType> GetMachineTypes()
         {
             try
             {
@@ -86,7 +86,7 @@ namespace AUVA.Service.Controllers {
                 AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
                 if (user != null)
                 {
-                    return DatabaseOperations.Machines.GetAll();
+                    return DatabaseOperations.MachineTypes.GetAll();
                 }
                 else
                 {
@@ -105,8 +105,8 @@ namespace AUVA.Service.Controllers {
         /// </summary>
         /// <param name="machineId">Id of the Machine you want to delete.</param>
         /// <returns>Returns true if Machine was deleted.</returns>
-        [HttpDelete, Route("{machineId}")]
-        public bool DeleteMachine(int machineId)
+        [HttpDelete, Route("{machinetypeId}")]
+        public bool DeleteMachineType(int machinetypeId)
         {
             try
             {
@@ -114,7 +114,7 @@ namespace AUVA.Service.Controllers {
                 AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
                 if (user != null)
                 {
-                    return DatabaseOperations.Machines.Delete(machineId);
+                    return DatabaseOperations.MachineTypes.Delete(machinetypeId);
                 }
                 else
                 {

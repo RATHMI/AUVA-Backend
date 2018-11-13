@@ -84,7 +84,7 @@ namespace AUVA.Service.DatabaseOperations.LiteDB
             }
         }
 
-        public static bool UpsertSecurityClothes(SecurityClothes sc)
+        public static bool UpsertSecurityClothes(AUVA.Domain.SecurityClothes sc)
         {
             if (sc != null)
             {

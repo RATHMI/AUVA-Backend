@@ -118,14 +118,22 @@
     <Compile Include="AppStartup.cs" />
     <Compile Include="Authentication\Token.cs" />
     <Compile Include="Controllers\MachineController.cs" />
+    <Compile Include="Controllers\MachineTypeController.cs" />
+    <Compile Include="Controllers\QRController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbDeletes.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbQueries.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbUpserts.cs" />
     <Compile Include="DatabaseOperations\Machines.cs" />
+    <Compile Include="DatabaseOperations\MachineTypes.cs" />
+    <Compile Include="DatabaseOperations\Rooms.cs" />
+    <Compile Include="DatabaseOperations\SecurityClothes.cs" />
     <Compile Include="DatabaseOperations\Users.cs" />
+    <Compile Include="DatabaseOperations\Warnings.cs" />
     <Compile Include="Encryption\Encrypt.cs" />
+    <Compile Include="ImageExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QR-Generator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

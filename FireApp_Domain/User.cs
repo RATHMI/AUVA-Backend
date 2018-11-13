@@ -14,6 +14,8 @@ namespace AUVA.Domain {
 
         public string Lastname { get; set; }
 
+        public Usertype Type { get; set; }
+
         public string Email { get; set; }
 
         public string Password { get; set; }
@@ -22,5 +24,12 @@ namespace AUVA.Domain {
 
         // A list of all MachineTypes where the user has received the safety instructions.
         public HashSet<int> MachineTypes { get; set; }
+    }
+
+    public enum Usertype
+    {
+        guest = 0,
+        student = 1,
+        teacher = 2
     }
 }
