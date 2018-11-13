@@ -19,7 +19,7 @@ namespace AUVA.Service.Controllers {
         /// </summary>
         /// <param name="u">The User you want to upsert.</param>
         /// <returns>Returns true if the User was inserted.</returns>
-        [HttpPost]
+        [HttpPost, HttpPut]
         public bool UpsertMachine([FromBody] SecurityClothes sc)
         {
             try
