@@ -121,7 +121,9 @@
     <Compile Include="Controllers\MachineTypeController.cs" />
     <Compile Include="Controllers\QRController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\SecurityClothesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WarningController.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbDeletes.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbQueries.cs" />
     <Compile Include="DatabaseOperations\LiteDB\DbUpserts.cs" />

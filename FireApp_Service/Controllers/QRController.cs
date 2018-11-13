@@ -29,7 +29,6 @@ namespace AUVA.Service.Controllers
 
             result = new HttpResponseMessage(HttpStatusCode.OK);
 
-            // Add the CSV file to the content of the response.
             result.Content = new ByteArrayContent(stream.ToArray());
             result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
 
