@@ -34,9 +34,13 @@ namespace AUVA.Domain
         // Link to the image on the server.
         public string Picture { get; set; }
 
+        // Machine has a defect.
         public bool Defective { get; set; }
+
+        // Defects that the machine has.
         public string Defects { get; set; }
 
+        // id of a user
         public int LastMaintainedBy { get; set; }
 
         public Machine()
