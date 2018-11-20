@@ -29,7 +29,7 @@ namespace AUVA.Domain
         public string EmergencyPlan { get; set; }
 
         // Link to the files on the server.
-        public string Files { get; set; }
+        public HashSet<string> Files { get; set; }
 
         // Link to the image on the server.
         public string Picture { get; set; }

@@ -12,7 +12,7 @@ namespace AUVA.Service.Controllers
     [RoutePrefix("qr")]
     public class QRController : ApiController
     {
-        [HttpPost, Route("generate/{data}/{size}")]
+        [HttpGet, Route("generate/{data}/{size}")]
         public HttpResponseMessage Generate(string data, int size)
         {
             HttpResponseMessage result;
