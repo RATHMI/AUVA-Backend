@@ -19,7 +19,7 @@ namespace AUVA.Service.DatabaseOperations.LiteDB
         public static bool UpsertUser(User user)
         {
             if (user != null)
-            {
+            {                
                 using (var db = AppData.UserDB())
                 {
                     var table = db.UserTable();
@@ -37,6 +37,10 @@ namespace AUVA.Service.DatabaseOperations.LiteDB
         {
             if (machine != null)
             {
+                if (machine.Id < 1)
+                {
+                    return false;
+                }
                 using (var db = AppData.MachineDB())
                 {
                     var table = db.MachineTable();
@@ -54,6 +58,10 @@ namespace AUVA.Service.DatabaseOperations.LiteDB
         {
             if (machinetype != null)
             {
+                if (machinetype.Id < 1)
+                {
+                    return false;
+                }
                 using (var db = AppData.MachineTypeDB())
                 {
                     var table = db.MachineTypeTable();
@@ -88,6 +96,10 @@ namespace AUVA.Service.DatabaseOperations.LiteDB
         {
             if (sc != null)
             {
+                if (sc.Id < 1)
+                {
+                    return false;
+                }
                 using (var db = AppData.SecurityClothesDB())
                 {
                     var table = db.SecurityClothesTable();
@@ -105,6 +117,10 @@ namespace AUVA.Service.DatabaseOperations.LiteDB
         {
             if (warning != null)
             {
+                if (warning.Id < 1)
+                {
+                    return false;
+                }
                 using (var db = AppData.WarningDB())
                 {
                     var table = db.WarningTable();
