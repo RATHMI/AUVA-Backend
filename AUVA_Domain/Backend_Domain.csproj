@@ -7,8 +7,8 @@
     <ProjectGuid>{1024446B-7F5D-4982-A8AD-6768DB546F4A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FireApp.Domain</RootNamespace>
-    <AssemblyName>FireApp.Domain</AssemblyName>
+    <RootNamespace>AUVA.Domain</RootNamespace>
+    <AssemblyName>AUVA.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

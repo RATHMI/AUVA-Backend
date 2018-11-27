@@ -31,7 +31,7 @@ namespace AUVA.Service.Controllers {
 
                 User user;
                 Authentication.Token.CheckAccess(Request.Headers, out user);
-                if (user != null && u.Id == user.Id)
+                if (user != null && (u.Id == user.Id || user.Type == Usertype.admin))
                 {
                     return DatabaseOperations.Users.Upsert(u);
                 }
