@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FireApp_Service")]
+[assembly: AssemblyTitle("AUVA_Service")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Licence Owner")]
-[assembly: AssemblyProduct("FireApp_Service")]
+[assembly: AssemblyProduct("AUVA_Service")]
 [assembly: AssemblyCopyright("Copyright © Licence Owner 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

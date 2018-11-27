@@ -10,7 +10,6 @@ using Microsoft.Owin.Cors;
 using AUVA.Domain;
 
 [assembly: OwinStartup(typeof(AUVA.Service.AppStartup))]
-
 namespace AUVA.Service {
     public class AppStartup {
         public void Configuration(IAppBuilder app) {
@@ -39,14 +38,14 @@ namespace AUVA.Service {
             phice.Type = Usertype.admin;
 
             User bauerbaerli = new User();
-            phice.Id = "bauerbaerli";
-            phice.Password = "bauerbaerli";
-            phice.Type = Usertype.admin;
+            bauerbaerli.Id = "bauerbaerli";
+            bauerbaerli.Password = "bauerbaerli";
+            bauerbaerli.Type = Usertype.admin;
 
             User turtlebear = new User();
-            phice.Id = "turtlebear";
-            phice.Password = "turtlebear";
-            phice.Type = Usertype.admin;
+            turtlebear.Id = "turtlebear";
+            turtlebear.Password = "turtlebear";
+            turtlebear.Type = Usertype.admin;
 
             Machine m = new Machine();
             m.Id = 1;
