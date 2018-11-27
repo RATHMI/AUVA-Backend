@@ -8,6 +8,11 @@ namespace AUVA.Domain
 {
     public class Room
     {
+        public Room()
+        {
+            Machines = new HashSet<int>();
+        }
+
         // RoomNumber
         public string Id { get; set; }
 

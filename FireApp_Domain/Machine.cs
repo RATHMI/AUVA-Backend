@@ -45,6 +45,7 @@ namespace AUVA.Domain
 
         public Machine()
         {
+            Files = new HashSet<string>();
             Defective = false;
         }
     }

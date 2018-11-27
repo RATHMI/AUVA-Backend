@@ -31,8 +31,21 @@ namespace AUVA.Service {
             User admin = new User();
             admin.Id = "admin";
             admin.Password = "admin";
+            admin.Type = Usertype.admin;
+
+            Machine m = new Machine();
+            m.Id = 1;
+            m.Name = "Testmaschine";
+
+            Room room = new Room();
+            room.Id = "4-57";
+            room.Description = "testroom";
+            room.Machines.Add(m.Id);
+            
 
             DatabaseOperations.Users.Upsert(admin);
+            DatabaseOperations.Machines.Upsert(m);
+            DatabaseOperations.Rooms.Upsert(room);
         }
     }
 }

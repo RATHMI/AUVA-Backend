@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 namespace AUVA.Domain {
     public class User {
 
+        public User()
+        {
+            MachineTypes = new HashSet<Usertype>();
+        }
         // Username.
         public string Id { get; set; }        
 
@@ -23,13 +27,14 @@ namespace AUVA.Domain {
         public string Token { get; set; }
 
         // A list of all MachineTypes where the user has received the safety instructions.
-        public HashSet<int> MachineTypes { get; set; }
+        public HashSet<Usertype> MachineTypes { get; set; }
     }
 
     public enum Usertype
     {
         guest = 0,
         student = 1,
-        teacher = 2
+        teacher = 2,
+        admin = 3
     }
 }
