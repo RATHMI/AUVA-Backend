@@ -33,6 +33,21 @@ namespace AUVA.Service {
             admin.Password = "admin";
             admin.Type = Usertype.admin;
 
+            User phice = new User();
+            phice.Id = "phice";
+            phice.Password = "phice";
+            phice.Type = Usertype.admin;
+
+            User bauerbaerli = new User();
+            phice.Id = "bauerbaerli";
+            phice.Password = "bauerbaerli";
+            phice.Type = Usertype.admin;
+
+            User turtlebear = new User();
+            phice.Id = "turtlebear";
+            phice.Password = "turtlebear";
+            phice.Type = Usertype.admin;
+
             Machine m = new Machine();
             m.Id = 1;
             m.Name = "Testmaschine";
