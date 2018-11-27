@@ -19,7 +19,7 @@ namespace AUVA.Service.Controllers {
         /// </summary>
         /// <param name="u">The User you want to upsert.</param>
         /// <returns>Returns true if the User was inserted.</returns>
-        [HttpPost, HttpPut]
+        [HttpPost, HttpPut, Route("")]
         public bool UpsertMachine([FromBody] MachineType mt)
         {
             try
@@ -77,7 +77,7 @@ namespace AUVA.Service.Controllers {
         /// Returns all the machines from the database.
         /// </summary>
         /// <returns>every machine object from the LiteDB.</returns>
-        [HttpGet]
+        [HttpGet, Route("")]
         public IEnumerable<MachineType> GetMachineTypes()
         {
             try
