@@ -59,6 +59,9 @@ namespace AUVA.Service {
             
 
             DatabaseOperations.Users.Upsert(admin);
+            DatabaseOperations.Users.Upsert(phice);
+            DatabaseOperations.Users.Upsert(bauerbaerli);
+            DatabaseOperations.Users.Upsert(turtlebear);
             DatabaseOperations.Machines.Upsert(m);
             DatabaseOperations.Rooms.Upsert(room);
         }
