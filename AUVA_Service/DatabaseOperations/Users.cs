@@ -57,5 +57,16 @@ namespace AUVA.Service.DatabaseOperations
         {
             return LiteDB.LiteDbQueries.QueryUsers();
         }
+
+        public static void DeleteGuests()
+        {
+            foreach (User u in GetAll())
+            {
+                if(u.Type == Usertype.guest)
+                {
+                    Delete(u.Id);
+                }
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AUVA.Domain;
 using LiteDB;
+using MlkPwgen;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -108,11 +109,6 @@ namespace AUVA.Service.Controllers {
             }
         }
 
-        /// <summary>
-        /// Deletes the User from the databases.
-        /// </summary>
-        /// <param name="userName">Id of the User you want to delete.</param>
-        /// <returns>Returns true if User was deleted.</returns>
         [HttpDelete, Route("{username}")]
         public bool DeleteUser(string userName)
         {
@@ -134,7 +130,53 @@ namespace AUVA.Service.Controllers {
                 Console.WriteLine(ex.Message);
                 return false;
             }
-        }             
-       
+        }
+
+        [HttpGet, Route("guest"), Route("guest/{firstname}/{lastname}")]
+        public User GetGuestuser(string firstname = "guest", string lastname = "guest")
+        {
+            try
+            {
+                User guest = new User();
+                guest.Firstname = firstname;
+                guest.Lastname = lastname;
+                guest.Password = "guest";
+                do
+                {
+                    guest.Id = PasswordGenerator.Generate(20, Sets.Lower);
+                } while (DatabaseOperations.Users.GetById(guest.Id) != null);
+
+                guest.Type = Usertype.guest;
+                DatabaseOperations.Users.Upsert(guest);
+
+                return guest;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        [HttpDelete, Route("guest")]
+        public void DeleteGuestusers()
+        {
+            try
+            {
+                User user;
+                Authentication.Token.CheckAccess(Request.Headers, out user);
+                if (user.Type > Usertype.student && user != null)
+                {
+                    DatabaseOperations.Users.DeleteGuests();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

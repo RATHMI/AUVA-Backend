@@ -31,7 +31,7 @@ namespace AUVA.Service.Controllers {
 
                 User user;
                 AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
-                if (user != null)
+                if (user.Type > Usertype.student && user != null)
                 {
                     return DatabaseOperations.Warnings.Upsert(w);
                 }
@@ -112,7 +112,7 @@ namespace AUVA.Service.Controllers {
             {
                 User user;
                 AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
-                if (user != null)
+                if (user.Type > Usertype.student && user != null)
                 {
                     return DatabaseOperations.Warnings.Delete(warningId);
                 }
