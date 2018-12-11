@@ -86,6 +86,11 @@ namespace AUVA.Service.Controllers {
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Returns the User with the matching id or null.</returns>
         [HttpGet, Route("{id}")]
         public User GetUser(string id)
         {
@@ -94,7 +99,7 @@ namespace AUVA.Service.Controllers {
                 User user;
                 Authentication.Token.CheckAccess(Request.Headers, out user);
                 
-                if(user.Type == Usertype.teacher)
+                if(user.Type >= Usertype.teacher)
                 {
                     return DatabaseOperations.Users.GetById(id);
                 }
@@ -109,6 +114,39 @@ namespace AUVA.Service.Controllers {
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns>Returns a list of all Users with a matching Usertype.</returns>
+        [HttpGet, Route("{usertype}")]
+        public IEnumerable<User> GetUser(Usertype type)
+        {
+            try
+            {
+                User user;
+                Authentication.Token.CheckAccess(Request.Headers, out user);
+
+                if (user.Type >= Usertype.teacher)
+                {
+                    return DatabaseOperations.Users.GetByUsertype(type);
+                }
+                else
+                {
+                    throw new InvalidOperationException();
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Deletes the User with a matching username.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
         [HttpDelete, Route("{username}")]
         public bool DeleteUser(string userName)
         {
@@ -132,6 +170,12 @@ namespace AUVA.Service.Controllers {
             }
         }
 
+        /// <summary>
+        /// Creates a new User with Usertype "guest".
+        /// </summary>
+        /// <param name="firstname">Optional firstname.</param>
+        /// <param name="lastname">Optional lastname.</param>
+        /// <returns>Returns a new User.</returns>
         [HttpGet, Route("guest"), Route("guest/{firstname}/{lastname}")]
         public User GetGuestuser(string firstname = "guest", string lastname = "guest")
         {

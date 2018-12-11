@@ -52,6 +52,16 @@ namespace AUVA.Service.DatabaseOperations
         {
             return LiteDB.LiteDbQueries.QueryUser(userName);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns>Returns all Users with a matching type.</returns>
+        public static IEnumerable<User> GetByUsertype(Usertype type)
+        {
+            return GetAll().Where(x => x.Type == type);
+        }
     
         public static IEnumerable<User> GetAll()
         {
