@@ -28,5 +28,9 @@ namespace AUVA.Domain
 
         // Link
         public string GuestInfo { get; set; }
+
+        //todo: csv generieren
+
+        //todo: csv einlesen
     }
 }

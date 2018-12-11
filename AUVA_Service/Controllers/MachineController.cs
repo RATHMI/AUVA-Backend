@@ -126,7 +126,8 @@ namespace AUVA.Service.Controllers {
                 Console.WriteLine(ex.Message);
                 return false;
             }
-        }             
-       
+        }
+
+        //todo: Schnittstelle für CSV-Dateien
     }
 }

@@ -119,7 +119,7 @@ namespace AUVA.Service.Controllers {
         /// </summary>
         /// <param name="type"></param>
         /// <returns>Returns a list of all Users with a matching Usertype.</returns>
-        [HttpGet, Route("{usertype}")]
+        [HttpGet, Route("usertype/{usertype}")]
         public IEnumerable<User> GetUser(Usertype type)
         {
             try
@@ -201,6 +201,9 @@ namespace AUVA.Service.Controllers {
             }
         }
 
+        /// <summary>
+        /// Deletes all Users with Usertype "guest".
+        /// </summary>
         [HttpDelete, Route("guest")]
         public void DeleteGuestusers()
         {
@@ -208,7 +211,7 @@ namespace AUVA.Service.Controllers {
             {
                 User user;
                 Authentication.Token.CheckAccess(Request.Headers, out user);
-                if (user.Type > Usertype.student && user != null)
+                if (user.Type >= Usertype.teacher && user != null)
                 {
                     DatabaseOperations.Users.DeleteGuests();
                 }

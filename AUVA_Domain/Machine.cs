@@ -8,6 +8,12 @@ namespace AUVA.Domain
 {
     public class Machine
     {
+        public Machine()
+        {
+            Files = new HashSet<string>();
+            Defective = false;
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -43,10 +49,10 @@ namespace AUVA.Domain
         // id of a user
         public int LastMaintainedBy { get; set; }
 
-        public Machine()
-        {
-            Files = new HashSet<string>();
-            Defective = false;
-        }
+        
+
+        //todo: csv generieren
+
+        //todo: csv einlesen
     }
 }
