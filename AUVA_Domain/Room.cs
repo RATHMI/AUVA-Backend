@@ -18,6 +18,8 @@ namespace AUVA.Domain
 
         public string Description { get; set; }
 
+        public string Image { get; set; }
+
         // Link to the emergancy plan on the server.
         public string EmergencyPlan { get; set; }
 
@@ -32,5 +34,11 @@ namespace AUVA.Domain
         //todo: csv generieren
 
         //todo: csv einlesen
+        public Room StringToRoom(string csv)
+        {
+            Room room = new Room();
+
+            return room;
+        }
     }
 }

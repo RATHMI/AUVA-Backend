@@ -109,6 +109,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\Rooms\Room1\image1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -149,7 +152,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\Machines\" />
+    <Folder Include="Data\Rooms\Room2\" />
+    <Folder Include="Data\Rooms\Room3\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AUVA_Domain\Backend_Domain.csproj">
       <Project>{1024446b-7f5d-4982-a8ad-6768db546f4a}</Project>
