@@ -28,17 +28,11 @@ namespace AUVA.Domain
 
         public HashSet<int> Machines { get; set; }
 
+        // Pictogramme
+        public HashSet<string> warnings { get; set; }
+
         // Link
         public string GuestInfo { get; set; }
 
-        //todo: csv generieren
-
-        //todo: csv einlesen
-        public Room StringToRoom(string csv)
-        {
-            Room room = new Room();
-
-            return room;
-        }
     }
 }

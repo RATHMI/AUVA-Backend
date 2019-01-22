@@ -109,9 +109,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\Rooms\Room1\image1.jpg" />
-    <Content Include="Data\Rooms\Room2\image2.jpg" />
-    <Content Include="Data\Rooms\Room3\image3.jpg" />
+    <Content Include="Data\Rooms\Room1\image1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Rooms\Room2\image2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Rooms\Room3\image3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -144,7 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Data\Rooms\emergency_plan.pdf" />
+    <Content Include="Data\Rooms\emergency_plan.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\Web.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -49,10 +49,5 @@ namespace AUVA.Domain
         // id of a user
         public int LastMaintainedBy { get; set; }
 
-        
-
-        //todo: csv generieren
-
-        //todo: csv einlesen
     }
 }
