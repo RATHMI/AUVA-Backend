@@ -8,6 +8,14 @@ namespace AUVA.Domain
 {
     public class MachineType
     {
+        public MachineType(){}
+        public MachineType(int id, string type, string safetyInstructions)
+        {
+            this.Id = id;
+            this.Type = type;
+            this.SafetyInstructions = safetyInstructions;
+        }
+
         public int Id { get; set; }
 
         // e.g. Standbohrmaschine, Fräsmaschine, Schweißgerät, ...

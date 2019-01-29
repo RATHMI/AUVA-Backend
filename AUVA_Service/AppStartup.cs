@@ -63,6 +63,10 @@ namespace AUVA.Service {
             DatabaseOperations.Users.Upsert(turtlebear);
             DatabaseOperations.Machines.Upsert(m);
             DatabaseOperations.Rooms.Upsert(room);
+
+            DatabaseOperations.MachineTypes.Upsert(new MachineType(1, "Baukreissäge", ""));
+            DatabaseOperations.MachineTypes.Upsert(new MachineType(2, "Dickenhobelmaschine", ""));
+            DatabaseOperations.MachineTypes.Upsert(new MachineType(3, "Freifallmischer", ""));
         }
     }
 }
