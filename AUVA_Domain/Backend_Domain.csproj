@@ -43,6 +43,7 @@
     <Compile Include="MachineType.cs" />
     <Compile Include="Machine.cs" />
     <Compile Include="Room.cs" />
+    <Compile Include="SafetyInstruction.cs" />
     <Compile Include="SecurityClothes.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

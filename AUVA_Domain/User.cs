@@ -26,8 +26,8 @@ namespace AUVA.Domain {
 
         public string Token { get; set; }
 
-        // A list of all MachineTypes where the user has received the safety instructions.
-        public HashSet<Usertype> MachineTypes { get; set; }
+        // A list of all SafetyInstructions.
+        public HashSet<SafetyInstruction> MachineTypes { get; set; }
     }
 
     public enum Usertype
