@@ -9,7 +9,7 @@ namespace AUVA.Domain {
 
         public User()
         {
-            MachineTypes = new HashSet<Usertype>();
+            MachineTypes = new HashSet<SafetyInstruction>();
         }
         // Username.
         public string Id { get; set; }        
