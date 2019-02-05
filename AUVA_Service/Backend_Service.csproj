@@ -144,6 +144,8 @@
     <Compile Include="DatabaseOperations\Users.cs" />
     <Compile Include="DatabaseOperations\Warnings.cs" />
     <Compile Include="Encryption\Encrypt.cs" />
+    <Compile Include="FileOperations\MachineTypeFiles.cs" />
+    <Compile Include="FileOperations\RoomFiles.cs" />
     <Compile Include="ImageExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QR-Generator.cs" />

@@ -9,7 +9,7 @@ namespace AUVA.Domain {
 
         public User()
         {
-            MachineTypes = new HashSet<SafetyInstruction>();
+            SafetyInstructions = new HashSet<SafetyInstruction>();
         }
         // Username.
         public string Id { get; set; }        
@@ -27,7 +27,7 @@ namespace AUVA.Domain {
         public string Token { get; set; }
 
         // A list of all SafetyInstructions.
-        public HashSet<SafetyInstruction> MachineTypes { get; set; }
+        public HashSet<SafetyInstruction> SafetyInstructions { get; set; }
     }
 
     public enum Usertype

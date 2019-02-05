@@ -43,5 +43,42 @@ namespace AUVA.Service.DatabaseOperations
         {
             return LiteDB.LiteDbQueries.QueryMachines();
         }
+
+        public static List<string> GetPictograms(int machineId)
+        {
+            List<string> pictograms;
+            Machine m = GetById(machineId);
+
+            try
+            {
+                pictograms = new List<string>();
+
+                Warning w;
+                foreach (int id in m.Warnings)
+                {
+                    w = DatabaseOperations.Warnings.GetById(id);
+                    if(w.Image != String.Empty)
+                    {
+                        pictograms.Add(w.Image);
+                    }
+                }
+
+                AUVA.Domain.SecurityClothes s;
+                foreach (int id in m.SecurityClothes)
+                {
+                    s = DatabaseOperations.SecurityClothes.GetById(id);
+                    if (s.Image != String.Empty)
+                    {
+                        pictograms.Add(s.Image);
+                    }
+                }
+            }
+            catch
+            {
+                pictograms = null;
+            }
+
+            return pictograms;
+        }
     }
 }

@@ -15,6 +15,6 @@ namespace AUVA.Domain
         public string Description { get; set; }
 
         // Link to the image.
-        public string Symbol { get; set; }
+        public string Image { get; set; }
     }
 }

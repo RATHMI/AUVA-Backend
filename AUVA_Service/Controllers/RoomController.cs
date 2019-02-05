@@ -126,8 +126,29 @@ namespace AUVA.Service.Controllers {
                 Console.WriteLine(ex.Message);
                 return false;
             }
-        }             
-       
+        }
+
+        [HttpGet, Route("pictograms/{id}")]
+        public HashSet<string> GetPictograms(string id)
+        {
+            try
+            {
+                User user;
+                AUVA.Service.Authentication.Token.CheckAccess(Request.Headers, out user);
+                if (user != null)
+                {
+                    return DatabaseOperations.Rooms.GetPictograms(id);
+                }
+                else
+                {
+                    throw new InvalidOperationException();
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
         //todo: Schnittstelle für CSV-Dateien
     }

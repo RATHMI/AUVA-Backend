@@ -23,5 +23,32 @@ namespace AUVA.Domain
 
         // Link to the safety instructions.
         public string SafetyInstructions { get; set; }
+
+        public static string GetCsvHeader()
+        {
+            return "Id;Type;SafetyInstructions";
+        }
+
+        public static MachineType GetFromCsv(string csv)
+        {
+            MachineType mt;
+
+            try
+            {
+                mt = new MachineType(Convert.ToInt32(csv.Split(';')[0]), csv.Split(';')[1], csv.Split(';')[2]);
+            }
+            catch
+            {
+                mt = null;
+            }
+
+
+            return mt;
+        }
+
+        public string ToCsv()
+        {
+            return Id.ToString() + ";" + Type + ";" + SafetyInstructions;
+        }
     }
 }

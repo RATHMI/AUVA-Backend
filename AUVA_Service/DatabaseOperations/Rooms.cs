@@ -45,5 +45,30 @@ namespace AUVA.Service.DatabaseOperations
         {
             return LiteDB.LiteDbQueries.QueryRooms();
         }
+
+        public static HashSet<string> GetPictograms(string roomId)
+        {
+            HashSet<string> pictograms;
+            Room room = GetById(roomId);
+
+            try
+            {
+                pictograms = new HashSet<string>();
+
+                foreach(int id in room.Machines)
+                {
+                    foreach(string s in DatabaseOperations.Machines.GetPictograms(id))
+                    {
+                        pictograms.Add(s);
+                    }
+                }
+            }
+            catch
+            {
+                pictograms = null;
+            }
+
+            return pictograms;
+        }
     }
 }
