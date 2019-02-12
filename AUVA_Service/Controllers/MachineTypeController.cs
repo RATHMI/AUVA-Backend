@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace AUVA.Service.Controllers {
@@ -126,7 +127,66 @@ namespace AUVA.Service.Controllers {
                 Console.WriteLine(ex.Message);
                 return false;
             }
-        }             
-       
+        }
+
+        [HttpGet, Route("csv")]
+        public HttpResponseMessage GetCsv()
+        {
+            HttpResponseMessage result;
+            try
+            {
+                User user;
+                Authentication.Token.CheckAccess(Request.Headers, out user);
+                if (user != null)
+                {
+                    if (user.Type == Usertype.admin)
+                    {
+                        var stream = new MemoryStream();
+
+                        // Get all MachineTypes.
+                        IEnumerable<MachineType> mt = DatabaseOperations.MachineTypes.GetAll();
+
+                        // Convert MachineTypes into a CSV file.
+                        byte[] file = FileOperations.MachineTypeFiles.ExportToCSV(mt);
+
+                        // Write CSV file into the stream.
+                        stream.Write(file, 0, file.Length);
+
+                        // Set position of stream to 0 to avoid problems with the index.
+                        stream.Position = 0;
+                        result = new HttpResponseMessage(HttpStatusCode.OK);
+
+                        // Add the CSV file to the content of the response.
+                        result.Content = new ByteArrayContent(stream.ToArray());
+                        result.Content.Headers.ContentDisposition =
+                            new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment")
+                            {
+                                FileName = "Users.csv"
+                            };
+                        result.Content.Headers.ContentType = new MediaTypeHeaderValue("text/csv");
+                    }
+                    else
+                    {
+                        // User is not an admin.
+                        result = new HttpResponseMessage(HttpStatusCode.Unauthorized);
+                        result.Content = null;
+                    }
+                }
+                else
+                {
+                    // Notify user that the login was not successful.
+                    result = new HttpResponseMessage(HttpStatusCode.Unauthorized);
+                    result.Content = null;
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                result = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+                return result;
+            }
+        }
     }
 }

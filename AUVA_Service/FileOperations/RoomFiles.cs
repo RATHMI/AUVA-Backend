@@ -10,9 +10,8 @@ namespace AUVA.Service.FileOperations
     public static class RoomFiles
     {
 
-        public static IEnumerable<Room> GetRoomFromCSV(byte[] bytes)
+        public static IEnumerable<Room> GetFromCSV(string csv)
         {
-            string csv = System.Text.Encoding.Default.GetString(bytes);
             List<Room> results = new List<Room>();
             Room room;
             try

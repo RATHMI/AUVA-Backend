@@ -7,10 +7,10 @@ using System.Text;
 
 namespace AUVA.Service.FileOperations
 {
-    public static class FireAlarmSystemFiles
+    public static class MachineTypeFiles
     {
 
-        public static IEnumerable<MachineType> GetMachineTypeFromCSV(byte[] bytes)
+        public static IEnumerable<MachineType> GetFromCSV(byte[] bytes)
         {
             string csv = System.Text.Encoding.Default.GetString(bytes);
             List<MachineType> results = new List<MachineType>();
