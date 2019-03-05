@@ -67,6 +67,25 @@ namespace AUVA.Service {
             DatabaseOperations.MachineTypes.Upsert(new MachineType(1, "Baukreissäge", ""));
             DatabaseOperations.MachineTypes.Upsert(new MachineType(2, "Dickenhobelmaschine", ""));
             DatabaseOperations.MachineTypes.Upsert(new MachineType(3, "Freifallmischer", ""));
+
+
+            DatabaseOperations.Warnings.Upsert(new Warning());
+            DatabaseOperations.Warnings.Upsert(new Warning());
+            DatabaseOperations.Warnings.Upsert(new Warning());
+            DatabaseOperations.Warnings.Upsert(new Warning());
+            DatabaseOperations.Warnings.Upsert(new Warning());
+            DatabaseOperations.Warnings.Upsert(new Warning());
+            DatabaseOperations.Warnings.Upsert(new Warning());
+
+            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
+            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
+            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
+            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
+            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
+            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
+            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
+
+
         }
     }
 }
