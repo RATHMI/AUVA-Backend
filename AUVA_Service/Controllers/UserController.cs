@@ -86,6 +86,30 @@ namespace AUVA.Service.Controllers {
             }
         }
 
+        [HttpGet, Route("")]
+        public IEnumerable<User> GetUsers()
+        {
+            try
+            {
+                User user;
+                Authentication.Token.CheckAccess(Request.Headers, out user);
+
+                if (user.Type >= Usertype.teacher)
+                {
+                    return DatabaseOperations.Users.GetAll();
+                }
+                else
+                {
+                    throw new InvalidOperationException();
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
         /// <summary>
         /// 
         /// </summary>
