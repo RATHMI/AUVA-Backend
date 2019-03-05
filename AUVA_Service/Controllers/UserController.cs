@@ -199,9 +199,9 @@ namespace AUVA.Service.Controllers {
         /// </summary>
         /// <param name="firstname">Optional firstname.</param>
         /// <param name="lastname">Optional lastname.</param>
-        /// <returns>Returns a new User.</returns>
+        /// <returns>Returns the token of the guest user.</returns>
         [HttpGet, Route("guest"), Route("guest/{firstname}/{lastname}")]
-        public User GetGuestuser(string firstname = "guest", string lastname = "guest")
+        public string GetGuestuser(string firstname = "guest", string lastname = "guest")
         {
             try
             {
@@ -215,9 +215,11 @@ namespace AUVA.Service.Controllers {
                 } while (DatabaseOperations.Users.GetById(guest.Id) != null);
 
                 guest.Type = Usertype.guest;
+                guest.Token = Authentication.Token.GenerateToken();
+                
                 DatabaseOperations.Users.Upsert(guest);
 
-                return guest;
+                return guest.Token;
             }
             catch (Exception)
             {
