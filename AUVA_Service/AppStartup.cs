@@ -46,45 +46,16 @@ namespace AUVA.Service {
             turtlebear.Id = "turtlebear";
             turtlebear.Password = "turtlebear";
             turtlebear.Type = Usertype.admin;
-
-            Machine m = new Machine();
-            m.Id = 1;
-            m.Name = "Testmaschine";
-
-            Room room = new Room();
-            room.Id = "4-57";
-            room.Description = "testroom";
-            room.Machines.Add(m.Id);
             
 
             DatabaseOperations.Users.Upsert(admin);
             DatabaseOperations.Users.Upsert(phice);
             DatabaseOperations.Users.Upsert(bauerbaerli);
             DatabaseOperations.Users.Upsert(turtlebear);
-            DatabaseOperations.Machines.Upsert(m);
-            DatabaseOperations.Rooms.Upsert(room);
 
-            DatabaseOperations.MachineTypes.Upsert(new MachineType(1, "Baukreissäge", ""));
-            DatabaseOperations.MachineTypes.Upsert(new MachineType(2, "Dickenhobelmaschine", ""));
-            DatabaseOperations.MachineTypes.Upsert(new MachineType(3, "Freifallmischer", ""));
-
-
-            DatabaseOperations.Warnings.Upsert(new Warning());
-            DatabaseOperations.Warnings.Upsert(new Warning());
-            DatabaseOperations.Warnings.Upsert(new Warning());
-            DatabaseOperations.Warnings.Upsert(new Warning());
-            DatabaseOperations.Warnings.Upsert(new Warning());
-            DatabaseOperations.Warnings.Upsert(new Warning());
-            DatabaseOperations.Warnings.Upsert(new Warning());
-
-            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
-            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
-            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
-            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
-            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
-            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
-            DatabaseOperations.SecurityClothes.Upsert(new SecurityClothes());
-
+            DatabaseOperations.MachineTypes.Upsert(new MachineType(1, "Säulenbohrmaschine", ""));
+            DatabaseOperations.MachineTypes.Upsert(new MachineType(2, "Tischbohrmaschine", ""));
+            DatabaseOperations.MachineTypes.Upsert(new MachineType(3, "Schleifmaschine", ""));
 
         }
     }
