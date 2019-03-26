@@ -121,7 +121,7 @@
     <Content Include="Data\Machines\Raum_W13M\Saeulenbohrmaschine_Maxion.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\Machines\Raum_W13M\Saeulenbohrmschine.JPG">
+    <Content Include="Data\Machines\Raum_W13M\Saeulenbohrmaschine.JPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Machines\Raum_W13M\Schleifmaschine_ReichmannUndSohn.JPG">
