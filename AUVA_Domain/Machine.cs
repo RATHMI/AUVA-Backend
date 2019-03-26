@@ -49,6 +49,8 @@ namespace AUVA.Domain
         // Defects that the machine has.
         public string Defects { get; set; }
 
+        //TODO: create a list: when and what were previous defects
+
         // id of a user
         public int LastMaintainedBy { get; set; }
 
